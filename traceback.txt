@@ -1,0 +1,57 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 496, in script
+    a "Hello, you found me!"
+  File "renpy/common/000window.rpy", line 132, in _window_auto_callback
+    _window_show(auto=True)
+  File "renpy/common/000window.rpy", line 75, in _window_show
+    renpy.with_statement(trans)
+RecursionError: maximum recursion depth exceeded
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 496, in script
+    a "Hello, you found me!"
+  File "/home/etilia/Schreibtisch/Game Development/Ren´py/renpy-8.3.3-sdk/renpy/ast.py", line 2586, in execute
+    Say.execute(self)
+  File "/home/etilia/Schreibtisch/Game Development/Ren´py/renpy-8.3.3-sdk/renpy/ast.py", line 591, in execute
+    statement_name(stmt_name)
+  File "/home/etilia/Schreibtisch/Game Development/Ren´py/renpy-8.3.3-sdk/renpy/ast.py", line 58, in statement_name
+    i(name)
+  File "renpy/common/000window.rpy", line 132, in _window_auto_callback
+    _window_show(auto=True)
+  File "renpy/common/000window.rpy", line 75, in _window_show
+    renpy.with_statement(trans)
+  File "/home/etilia/Schreibtisch/Game Development/Ren´py/renpy-8.3.3-sdk/renpy/exports/statementexports.py", line 257, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "/home/etilia/Schreibtisch/Game Development/Ren´py/renpy-8.3.3-sdk/renpy/display/core.py", line 1581, in do_with
+    return self.interact(trans_pause=True,
+  File "/home/etilia/Schreibtisch/Game Development/Ren´py/renpy-8.3.3-sdk/renpy/display/core.py", line 2218, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/home/etilia/Schreibtisch/Game Development/Ren´py/renpy-8.3.3-sdk/renpy/display/core.py", line 2769, in interact_core
+    renpy.display.focus.before_interact(focus_roots)
+  File "/home/etilia/Schreibtisch/Game Development/Ren´py/renpy-8.3.3-sdk/renpy/display/focus.py", line 385, in before_interact
+    root.find_focusable(callback, None)
+  File "/home/etilia/Schreibtisch/Game Development/Ren´py/renpy-8.3.3-sdk/renpy/display/displayable.py", line 336, in find_focusable
+    i.find_focusable(callback, focus_name)
+  File "/home/etilia/Schreibtisch/Game Development/Ren´py/renpy-8.3.3-sdk/renpy/display/displayable.py", line 336, in find_focusable
+    i.find_focusable(callback, focus_name)
+  File "/home/etilia/Schreibtisch/Game Development/Ren´py/renpy-8.3.3-sdk/renpy/display/displayable.py", line 336, in find_focusable
+    i.find_focusable(callback, focus_name)
+  [Previous line repeated 976 more times]
+  File "/home/etilia/Schreibtisch/Game Development/Ren´py/renpy-8.3.3-sdk/renpy/display/displayable.py", line 332, in find_focusable
+    for i in self.visit():
+  File "/home/etilia/Schreibtisch/Game Development/Ren´py/renpy-8.3.3-sdk/renpy/atl.py", line 818, in visit
+    return self.children + block.visit() # type: ignore
+  File "/home/etilia/Schreibtisch/Game Development/Ren´py/renpy-8.3.3-sdk/renpy/atl.py", line 1107, in visit
+    return [ j for i in self.statements for j in i.visit() ]
+  File "/home/etilia/Schreibtisch/Game Development/Ren´py/renpy-8.3.3-sdk/renpy/atl.py", line 1107, in <listcomp>
+    return [ j for i in self.statements for j in i.visit() ]
+RecursionError: maximum recursion depth exceeded
+
+Linux-6.8.0-83-generic-x86_64-with-glibc2.39 x86_64
+Ren'Py 8.3.7.25031702
+only one bed 1.1
+Mon Sep 29 20:22:02 2025
